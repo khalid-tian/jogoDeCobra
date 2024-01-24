@@ -90,7 +90,6 @@ window.onload = function () {
           cobraBody[i].y > 290
         ) {
           gameover.style.display = "block";
-          // clearInterval(aRepticaoDoJogo);
           jogando = false;
         }
         if (
@@ -99,7 +98,6 @@ window.onload = function () {
           ).length > 1
         ) {
           gameover.style.display = "block";
-          // clearInterval(aRepticaoDoJogo);
           jogando = false;
         }
       } else {
