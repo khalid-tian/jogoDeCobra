@@ -10,7 +10,6 @@ window.onload = function () {
   const velocidade = 100;
   let jogando = true;
 
-  // const aRepticaoDoJogo = setInterval(moveCobra, velocidade);
   createcomida();
   createCobra();
   rodarOJogo();
@@ -153,7 +152,6 @@ window.onload = function () {
     gameover.style.display = "none";
     jogando = true;
     tempoInicio = 0;
-    // aRepticaoDoJogo = setInterval(moveCobra, velocidade);
     rodarOJogo();
   });
 };
