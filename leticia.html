@@ -1,0 +1,205 @@
+<!Doctype html>
+<html lang="pt">
+
+<head>
+    <!-- feito por leticia -->
+    <title>titulo da leticia</title>
+    <meta name="author" content="leticia">
+    <meta name="description" content="calculadora">
+    <meta charset="iso-8879-1">
+    <link rel="stylesheet" href="leticia.css">
+    <script>
+        (function () {
+            const titulo = document.getElementById('titulo');
+            alert(titulo);
+        })();
+        let left = '0';
+        let right = '';
+        let operacao = '';
+        let resultado = 0;
+        function atualizar() {
+            let mostrar = '0';
+            if (resultado) {
+                mostrar = resultado;
+            } else if (left) {
+                mostrar = Number(left);
+                if (operacao) {
+                    // mostrar += operacao;
+                    mostrar = mostrar + operacao;
+                    if (right) {
+                        mostrar += Number(right);
+                        if (resultado) {
+                            mostrar = resultado;
+                        }
+                    }
+                }
+            }
+            const elemento = document.getElementById('resultado');
+            elemento.innerHTML = mostrar;
+        }
+        function um() {
+            if (operacao) {
+                right += '1';
+            } else {
+                left += '1';
+            }
+            atualizar();
+        }
+        function dois() {
+            if (operacao) {
+                right += '2';
+            } else {
+                left += '2';
+            }
+            atualizar();
+        }
+        function tres() {
+            if (operacao) {
+                right += '3';
+            } else {
+                left += '3';
+            }
+            atualizar();
+        }
+        function quatro() {
+            if (operacao) {
+                right += '4';
+            } else {
+                left += '4';
+            }
+            atualizar();
+        }
+        function cinco() {
+            if (operacao) {
+                right += '5';
+            } else {
+                left += '5';
+            }
+            atualizar();
+        }
+        function seis() {
+            if (operacao) {
+                right += '6';
+            } else {
+                left += '6';
+            }
+            atualizar();
+        }
+        function sete() {
+            if (operacao) {
+                right += '7';
+            } else {
+                left += '7';
+            }
+            atualizar();
+        }
+        function oito() {
+            if (operacao) {
+                right += '8';
+            } else {
+                left += '8';
+            }
+            atualizar();
+        }
+        function nove() {
+            if (operacao) {
+                right += '9';
+            } else {
+                left += '9';
+            }
+            atualizar();
+        }
+        function zero() {
+            if (operacao) {
+                right += '0';
+            } else {
+                left += '0';
+            }
+            atualizar();
+        }
+        function mais() {
+            operacao = '+';
+            atualizar();
+        }
+        function menos() {
+            operacao = '-';
+            atualizar();
+        }
+        function multiplicar() {
+            operacao = 'x';
+            atualizar();
+        }
+        function dividir() {
+            operacao = '/';
+            atualizar();
+        }
+        function calcular() {
+            let resultado = 0;
+            if (left && operacao && right) {
+                switch (operacao) {
+                    case '+':
+                        resultado = Number(left) + Number(right);
+                        break;
+                    case '-':
+                        resultado = Number(left) - Number(right);
+                        break;
+                    case 'x':
+                        resultado = Number(left) * Number(right);
+                        break;
+                    case '/':
+                        resultado = Number(left) / Number(right);
+                        break;
+                }
+            }
+            operacao = ``;
+            right = ``;
+            left = `${resultado}`;
+            atualizar();
+        }
+        function zerar() {
+            operacao = ``;
+            right = ``;
+            left = `0`;
+            resultado = ``;
+            atualizar();
+        }
+    </script>
+</head>
+
+<body>
+    <div id="resultado">0</div>
+    <table>
+        <tr>
+            <td onclick="zerar()">C</td>
+            <td>()</td>
+            <td>%</td>
+            <td onclick="dividir()">/</td>
+        </tr>
+        <tr>
+            <td onclick="sete()">7</td>
+            <td onclick="oito()">8</td>
+            <td onclick="nove()">9</td>
+            <td onclick="multiplicar()">x</td>
+        </tr>
+        <tr>
+            <td onclick="quatro()">4</td>
+            <td onclick="cinco()">5</td>
+            <td onclick="seis()">6</td>
+            <td onclick="menos()">-</td>
+        </tr>
+        <tr>
+            <td onclick="um()">1</td>
+            <td onclick="dois()">2</td>
+            <td onclick="tres()">3</td>
+            <td onclick="mais()">+</td>
+        </tr>
+        <tr>
+            <td>+-</td>
+            <td onclick="zero()">0</td>
+            <td>,</td>
+            <td onclick="calcular()">=</td>
+        </tr>
+    </table>
+</body>
+
+</html>
